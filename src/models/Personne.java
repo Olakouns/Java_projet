@@ -1,9 +1,11 @@
+package models;
+
 public abstract class Personne {
-    private static int nbPersonnes;
-    private String nom;
-    private String prenom;
-    private char sexe;
-    private int age;
+    protected static int nbPersonnes;
+    protected String nom;
+    protected String prenom;
+    protected char sexe;
+    protected int age;
 
     public Personne() {
         nbPersonnes++;

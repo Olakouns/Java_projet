@@ -1,3 +1,5 @@
+package models;
+
 public class Etudiant extends Personne{
     private int matricule;
     private String formation;
@@ -25,5 +27,11 @@ public class Etudiant extends Personne{
 
     public void setFormation(String formation) {
         this.formation = formation;
+    }
+
+    @Override
+    public void sePresenter() {
+        super.sePresenter();
+        System.out.println("Mon numero matricule est "+matricule+ " et je suis la formation : "+formation);
     }
 }
