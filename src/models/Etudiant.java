@@ -1,8 +1,8 @@
 package models;
 
 public class Etudiant extends Personne{
-    private int matricule;
-    private String formation;
+    protected int matricule;
+    protected String formation;
 
     public Etudiant() {
     }
