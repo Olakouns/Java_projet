@@ -7,7 +7,13 @@ public class Etudiant extends Personne{
     public Etudiant() {
     }
 
-    public Etudiant(String nom, String prenom, char sexe, int age, int matricule, String formation) {
+    public Etudiant(String nom, String prenom, char sexe, int matricule, String formation) {
+        super(nom, prenom, sexe);
+        this.matricule = matricule;
+        this.formation = formation;
+    }
+
+    public Etudiant(String nom, String prenom, char sexe, int age, int matricule, String formation) throws Exception {
         super(nom, prenom, sexe, age);
         this.matricule = matricule;
         this.formation = formation;

@@ -11,7 +11,13 @@ public abstract class Personne {
         nbPersonnes++;
     }
 
-    public Personne(String nom, String prenom, char sexe, int age) {
+    public Personne(String nom, String prenom, char sexe) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.sexe = sexe;
+    }
+
+    public Personne(String nom, String prenom, char sexe, int age) throws Exception {
 //        Call empty constructor here by using this()
         this();
         this.nom = nom;
@@ -48,11 +54,20 @@ public abstract class Personne {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age > 0 ? age : this.age;
+    public void setAge(int age) throws Exception {
+        if (age < 0) {
+            throw  new Exception("AGE must not be less than zero");
+        }
+        this.age = age;
     }
 
-    public void sePresenter(){
+    public void sePresenter() {
+        if (nom == null || prenom == null) {
+            throw  new RuntimeException("Nom or prenom must must not be null");
+        }
+        if (nom.isEmpty() ||  prenom.isEmpty()) {
+            throw  new RuntimeException("Nom or prenom must not be empty");
+        }
         System.out.println("Je suis "+ prenom + " " + nom +", j'ai  "+age+ " ans et je suis de sexe "+sexe);
     }
 
