@@ -1,5 +1,6 @@
-public class PersonneFactory {
-    public Personne getPersonne (Class<? extends Personne> typePersonne) {
+public class PersonneFactory  extends AbstractFactory{
+    @Override
+    public Personne getPersonne(Class<? extends Personne> typePersonne) {
         if ( typePersonne == null ) {
             return null;
         }
